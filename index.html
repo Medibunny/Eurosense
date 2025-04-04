@@ -6,13 +6,19 @@
       href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
       rel="stylesheet"
     />
-
+    <!-- Highcharts for the map -->
     <script src="https://code.highcharts.com/maps/highmaps.js"></script>
     <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/maps/modules/accessibility.js"></script>
+    <!-- ECharts for bar/pie charts -->
     <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <!-- Papa Parse for CSV -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
-    <script src="script.js"></script>
+    <!-- Plotly for the ternary chart -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <script src="script.js" defer></script>
+
     <style>
       body {
         font-family: "Inter", sans-serif;
@@ -70,9 +76,11 @@
   </head>
   <body>
     <div class="dashboard-container">
+      <!-- Map -->
       <div class="map-box">
         <div id="europeMap" class="map-chart"></div>
       </div>
+      <!-- Bar charts -->
       <div class="chart-box">
         <div id="barChart1" class="bar-chart"></div>
       </div>
@@ -85,6 +93,7 @@
       <div class="chart-box">
         <div id="barChart4" class="bar-chart"></div>
       </div>
+      <!-- Pie charts -->
       <div class="chart-box">
         <div id="chart1" class="chart"></div>
       </div>
@@ -98,8 +107,18 @@
         <div id="chart4" class="chart"></div>
       </div>
       <div class="chart-box">
-        <div id="radarChart" class="chart"></div>
+        <div id="ternaryChart" class="chart"></div>
       </div>
+      <div class="chart-box">
+        <div id="ternaryChart2" class="chart"></div>
+      </div>
+      <div class="chart-box">
+        <div id="ternaryChart3" class="chart"></div>
+      </div>
+      <div class="chart-box">
+        <div id="ternaryChart4" class="chart"></div>
+      </div>
+    </div>
     </div>
   </body>
 </html>
