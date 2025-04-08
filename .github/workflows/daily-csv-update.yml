@@ -48,5 +48,6 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add captures.csv
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update CSV data [skip ci]" && git push) 
+        git add .
+        git status
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update dependencies and CSV data [skip ci]" && git push) 
