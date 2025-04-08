@@ -43,13 +43,19 @@ jobs:
         # Wait for server to shut down
         sleep 2
       
-    - name: Commit and push CSV
+    - name: Update files and push changes
       if: success()
       env:
         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
+        
+        # Update CSV and timestamp
         git add captures.csv
-        git commit -m "Update CSV data [skip ci]" || echo "No changes to commit"
+        echo "Last updated: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" > last-update.txt
+        git add last-update.txt
+        
+        # Commit and push changes
+        git commit -m "Update CSV data and timestamp [skip ci]" || echo "No changes to commit"
         git push 
