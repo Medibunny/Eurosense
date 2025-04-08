@@ -20,6 +20,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.2",
+    "fs": "^0.0.1-security",
     "json2csv": "^6.0.0-alpha.2",
     "node-cron": "^3.0.3",
     "node-fetch": "^2.7.0"
