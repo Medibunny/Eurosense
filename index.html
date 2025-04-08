@@ -19,9 +19,6 @@
 
     <script src="script.js" defer></script>
 
-    <title>Eurosense Dashboard</title>
-    <meta http-equiv="refresh" content="86400"> <!-- Refresh every 24 hours -->
-
     <style>
       body {
         font-family: "Inter", sans-serif;
@@ -60,28 +57,6 @@
         width: 100%;
         height: 600px;
       }
-      .update-info {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        z-index: 1000;
-      }
-      .refresh-button {
-        background: #4CAF50;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 3px;
-        cursor: pointer;
-        margin-left: 10px;
-      }
-      .refresh-button:hover {
-        background: #45a049;
-      }
       @media (min-width: 800px) {
         .dashboard-container {
           grid-template-columns: repeat(2, 1fr);
@@ -97,25 +72,9 @@
           white-space: nowrap;
         }
       }
-      body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow: hidden;
-      }
-      iframe {
-        width: 100%;
-        height: 100vh;
-        border: none;
-      }
     </style>
   </head>
   <body>
-    <div class="update-info">
-      Last updated: <span id="lastUpdate">Loading...</span>
-      <button class="refresh-button" onclick="window.location.reload()">Refresh Now</button>
-    </div>
-
     <div class="dashboard-container">
       <!-- Map -->
       <div class="map-box">
@@ -160,16 +119,6 @@
         <div id="ternaryChart4" class="chart"></div>
       </div>
     </div>
-    <script>
-      // Fetch and display last update time
-      fetch('last-update.txt')
-        .then(response => response.text())
-        .then(text => {
-          document.getElementById('lastUpdate').textContent = text;
-        })
-        .catch(error => {
-          document.getElementById('lastUpdate').textContent = 'Error loading update time';
-        });
-    </script>
+    </div>
   </body>
 </html>
